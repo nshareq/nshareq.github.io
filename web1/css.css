@@ -189,16 +189,11 @@ body{
 	background-repeat: no-repeat;
 } */
 
-.nine, .ten, .eleven{
+.all{
 	position: relative;
 }
 
-.foc textarea{
-	position: relative;
-}
-
-
-.nine span, .ten span, .eleven span{
+.all span{
 	position: absolute;
 	top: 0px;
     left: 35px;
@@ -207,7 +202,7 @@ body{
     transition: 0.2s ease all;
 }
 
-.foc input:focus ~ .spn{
+.all input:focus ~ .spn{
 	top:-15px;
     left: 35px;
     color: black; 
@@ -215,7 +210,7 @@ body{
     font-weight: bold;
 }
 
-.foc textarea:focus ~ .spn{
+.all textarea:focus ~ .spn{
 	top:-15px;
     left: 35px;
     color: black; 
