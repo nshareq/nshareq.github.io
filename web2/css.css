@@ -1,0 +1,102 @@
+body{
+		padding: 20%;
+		background-color: rgba(0,0,1,.2);
+}
+
+h1{
+	font-size: 40px;
+	background-color: #345;
+	color: white;
+	font-family: tahoma;
+}
+h3{
+	background-color: #777;
+	color: white;	
+	font-family: tahoma;
+	padding-left: 10px;
+	font-size: 22px;
+	text-shadow: 2px 3px 3px black;
+}
+
+p{
+	color: green;
+	font-size: 18px;
+	font-family: arial;
+	text-align: justify;
+}
+
+p, h5{
+	padding: 7px 7px 0 0;
+}
+ul{
+	color: blue;
+	font-size: 18px;
+}
+ol{
+	color: green;
+}
+
+.login{
+	display: block;
+	text-align: right;
+}
+
+.loginn{
+	padding-right: 10%;
+}
+
+.heading{
+	text-align: center;
+	text-shadow: 2px 3px 3px black;
+	font-size: 50px;
+	letter-spacing: 3px;
+}
+
+.paraone{
+	display: inline-block;
+	width: 70%;
+	vertical-align: top;
+}
+
+.pixy{
+	width: 25%;
+	display: inline-block;
+}
+
+.pixy img{
+	display: block;
+	width: 300px;
+	padding-top: 10px;
+}
+.toppara{
+	clear: both;
+}
+
+a{
+	text-decoration: none;
+}
+
+.hh3{
+	color: #445;
+}
+
+.uul{
+	display: block;
+	text-align: center;
+}
+
+.leads{
+	font-size: 20px;
+	word-spacing: 4px;
+}
+
+.feedback{
+	display: block;
+	text-align: center;
+}
+
+.fields{
+	padding: 60px;
+	display: block;
+	margin: 0 5%;
+}
