@@ -8,7 +8,8 @@
 }
 
 .top{
-	width: 60%;
+	
+	width: 820px;
 	margin: auto;
 	margin-top: 50px;
 }
@@ -29,35 +30,42 @@
 
 .col1{
 	height: 400px;
-	width: 30%;
+	width: 247px;
 	text-align: center;
 	margin-top: 25px;
 	border: 2px solid rgb(180,180,180);
 	border-radius: 10px;
 	display: inline-block;
 	margin: 8px;
+	overflow: hidden;
 	
 }
+
 
 .col1 img{
 	height: 100px;
 	width: 100px;
 	margin-top: 17px;
-	border: 3px solid black;
+	border: 2px solid white;
 	border-radius: 60px; 
-	border-top: 3px solid blue;
-	border-bottom: 3px solid blue;
+	border-top: 2px solid blue;
+	border-bottom: 2px solid blue;
+	transform: rotate(335deg);
 }
 
-.col1 img:hover{
-	border: 3px solid red;
-	border-top: 3px solid black;
-	border-bottom: 3px solid black;
+.col1:hover {
+	border-color: blue;
+		transform: rotate(0deg);
+	
 }
 
+.soja img{
+	transform: rotate(0deg);
+
+}
 
 hr{
-	width: 70%;
+	width: 174px;
 	margin: 10px auto;	
 
 }
@@ -76,8 +84,9 @@ hr{
 }
 
 .col1 p{
-	width: 80%;
+	width: 200px;
 	margin: auto;
+	text-align: justify;
 }
 
 button{
@@ -96,4 +105,5 @@ button:hover {
 
 .table{
 	text-align: center;
+	overflow: hidden;
 }
