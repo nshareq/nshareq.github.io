@@ -196,10 +196,7 @@ body{
 .foc textarea{
 	position: relative;
 }
-.eleven input{
-	height: 80px;
-	background-color: red;
-}
+
 
 .nine span, .ten span, .eleven span{
 	position: absolute;
