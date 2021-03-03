@@ -201,7 +201,7 @@ body{
     transition: 0.2s ease all;
 }
 
-.all input:focus ~ .spn{
+.all input:focus ~ .spn,.all input:not(:focus):valid ~ .spn{
 	top:-15px;
     left: 35px;
     color: black; 
@@ -209,7 +209,7 @@ body{
     font-weight: bold;
 }
 
-.all textarea:focus ~ .spn{
+.all textarea:focus ~ .spn,.all textarea:not(:focus):valid ~ .spn{
 	top:-15px;
     left: 35px;
     color: black; 
