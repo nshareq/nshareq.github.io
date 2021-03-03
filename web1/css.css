@@ -218,7 +218,7 @@ body{
 }
 
 body{
-	background-image: url("img/back.jpg") linen;
+	background-image: url("img/back.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
