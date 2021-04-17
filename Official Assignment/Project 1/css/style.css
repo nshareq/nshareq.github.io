@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
@@ -6,38 +6,41 @@
 
 html {
     scroll-behavior: smooth;
-  }
-  
+}
 
-a, p, h2{
+a,
+p,
+h2 {
     text-decoration: none;
     color: white;
 }
 
-h3, h1{
+h3,
+h1 {
     color: #FE9000;
 }
 
-ul, li{
+ul,
+li {
     list-style: none;
 }
 
-body{
+body {
     background-color: #1D1D23;
     max-width: 1440px;
-    margin:auto;
+    margin: auto;
 }
 
-#home{
+#home {
     background-image: url('../img/image3.png');
-    background-position: center ;
+    background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     overflow: hidden;
     padding-bottom: 120px;
 }
 
-.navigation{
+.navigation {
     display: flex;
     justify-content: space-around;
     margin-top: 40px;
@@ -46,19 +49,17 @@ body{
     width: 100%;
 }
 
-.navigation ul a{
+.navigation ul a {
     transition: .6s;
 }
 
-
-.navigation ul a:hover{
+.navigation ul a:hover {
     color: #E58F00;
 }
 
-.logo img{
+.logo img {
     cursor: pointer;
 }
-
 
 .sticky {
     position: fixed;
@@ -69,33 +70,31 @@ body{
     max-width: 1440px;
 }
 
-.nav-1 ul{
+.nav-1 ul {
     display: flex;
     flex-wrap: wrap;
-
 }
 
-.nav-3 ul{
+.nav-3 ul {
     display: flex;
     flex-wrap: wrap;
-
 }
 
-.nav-1 ul li{
- margin-left: 20px;
+.nav-1 ul li {
+    margin-left: 20px;
 }
 
-.nav-3 ul li{
+.nav-3 ul li {
     margin-right: 20px;
-   }
+}
 
-.nav-3 ul a, .nav-1 ul a{
+.nav-3 ul a,
+.nav-1 ul a {
     color: white;
     text-transform: uppercase;
 }
 
-
-.home-main{
+.home-main {
     margin: auto;
     width: 80%;
     display: flex;
@@ -103,27 +102,26 @@ body{
     margin-top: 40px;
 }
 
-.home-img img{
+.home-img img {
     width: 100%;
 }
 
-.home-text{
+.home-text {
     width: 40%;
     margin-left: 60px;
 }
 
-.home-text h1{
+.home-text h1 {
     font-size: 50px;
     padding-bottom: 30px;
 }
 
-.home-text p{
+.home-text p {
     font-size: 20px;
     padding-bottom: 30px;
 }
 
-
-.home-text a{
+.home-text a {
     color: black;
     font-size: 20px;
     background-color: #E58F00;
@@ -137,27 +135,28 @@ body{
     font-weight: bold;
 }
 
-.home-text a:hover{
+.home-text a:hover {
     background-color: #daa700;
-
 }
 
-#about, #quality, #gallery, #blog, #menu, #offers, #contact{
+#about,
+#quality,
+#gallery,
+#blog,
+#menu,
+#offers,
+#contact {
     width: 100%;
 }
 
-
-.active li{
+.active li {
     color: #E58F00;
 }
 
 
-
-
 /* About  */
 
-
-.about-main{
+.about-main {
     width: 80%;
     display: flex;
     margin: auto;
@@ -165,42 +164,41 @@ body{
     align-items: center;
 }
 
-.about-img img{
+.about-img img {
     width: 600px;
 }
 
-.about-text{
+.about-text {
     margin-left: 40px;
 }
 
-.about-text h2{
+.about-text h2 {
     font-size: 50px;
     padding-bottom: 20px;
 }
 
-.about-text p{
+.about-text p {
     font-size: 30px;
     text-align: justify;
 }
 
 
-
 /* Quality */
 
-.quality{
+.quality {
     position: relative;
     height: 1693px;
-    background-image: url("../img/image6.png");
+    background-image: url("../img/image6.webp");
     background-position: center center;
     background-repeat: no-repeat;
     z-index: 5;
 }
 
-.quality-main{
+.quality-main {
     margin-top: 120px;
 }
 
-.quality-text{
+.quality-text {
     position: absolute;
     z-index: 3;
     width: 500px;
@@ -208,73 +206,69 @@ body{
     left: 10%;
 }
 
-.quality-text h2{
+.quality-text h2 {
     font-size: 50px;
 }
 
-.quality-text p{
+.quality-text p {
     font-size: 30px;
 }
 
-
-.quality-main img{
+.quality-main img {
     position: absolute;
 }
 
-
-.quality-img-1 img{
+.quality-img-1 img {
     top: -70px;
     right: 0;
     height: 45%
 }
 
-.quality-img-4 img{
+.quality-img-4 img {
     bottom: 0;
     left: 0;
     height: 35%
-
 }
 
-.quality-img-3 img{
+.quality-img-3 img {
     bottom: 0;
     right: 0;
     height: 60%
-
 }
 
 
 /* Gallery  */
 
-.gallery{
+.gallery {
     margin-top: 250px;
 }
 
-.gallery h2{
+.gallery h2 {
     font-size: 50px;
     text-align: center;
     margin-bottom: 100px;
 }
 
-.gallery-main{
+.gallery-main {
     width: 80%;
-    margin:auto;
+    margin: auto;
 }
 
-
-.gallery-img{
+.gallery-img {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
 }
 
-.gallery-img img{
+.gallery-img img {
     width: 30%;
 }
 
 
 /* Blog  */
-.blog{
+
+.blog {
     background-image: url('../img/image17.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -284,41 +278,43 @@ body{
     display: flex;
 }
 
-.blog-main{
+.blog-main {
     width: 50%;
     background-color: #1f1f258c;
     margin: auto;
     border: 15px solid #E58F00;
 }
-.blog-text{
+
+.blog-text {
     width: 70%;
     padding: 100px 100px;
     margin: auto;
     text-align: center;
 }
 
-.blog-text h2{
+.blog-text h2 {
     font-size: 50px;
     margin-bottom: 20px;
 }
 
-.blog-text p{
+.blog-text p {
     font-size: 30px;
 }
 
+
 /*  Menu  */
 
-.menu{
+.menu {
     margin-top: 100px;
 }
 
-.menu-head{
+.menu-head {
     font-size: 40px;
     text-align: center;
     margin-bottom: 100px;
 }
 
-.menu-main{
+.menu-main {
     width: 90%;
     display: flex;
     justify-content: space-between;
@@ -327,34 +323,34 @@ body{
     flex-wrap: wrap;
 }
 
-.menu-col-1-3{
+.menu-col-1-3 {
     width: 30%;
 }
 
-.menu-img{
+.menu-img {
     width: 400px;
     height: 360px;
     overflow: hidden;
     text-align: center;
 }
 
-.menu-text{
+.menu-text {
     margin-top: 30px;
     width: 400px;
 }
 
-.menu-text h3{
+.menu-text h3 {
     font-size: 28px;
     margin-bottom: 10px;
 }
 
-.menu-text p{
+.menu-text p {
     font-size: 17px;
     margin-bottom: 10px;
     text-align: justify;
 }
 
-.menu-text span{
+.menu-text span {
     font-size: 17px;
     color: #E28C01;
     font-weight: bold;
@@ -363,67 +359,64 @@ body{
 
 
 /* Offers  */
-.offers{
+
+.offers {
     margin-top: 200px;
 }
-.offers-main{
+
+.offers-main {
     display: flex;
-    
     justify-content: space-between;
     align-items: center;
     background-color: #E58F00;
     height: 420px;
 }
 
-.offers-text{
+.offers-text {
     margin-right: 140px;
     width: 470px;
 }
 
-.offers-text h2{
+.offers-text h2 {
     font-size: 50px;
     margin-bottom: 30px;
 }
 
-.offers-text p{
+.offers-text p {
     font-size: 30px;
 }
 
 
-
-
-
 /* Contact  */
 
-.contact{
+.contact {
     margin-top: 150px;
 }
 
-.contact-main{
+.contact-main {
     width: 60%;
-    margin:auto;
+    margin: auto;
     text-align: center;
 }
 
-.contact-nav ul{
+.contact-nav ul {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.contact-nav ul a{
+.contact-nav ul a {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 17px;
 }
 
-
-.social{
+.social {
     margin-bottom: 50px;
 }
 
-.fab{
+.fab {
     background-color: white;
     padding: 15px 13px;
     font-size: 27px;
@@ -434,7 +427,7 @@ body{
     cursor: pointer;
 }
 
-.fab:hover{
+.fab:hover {
     background-color: #E58F00;
     color: white;
     transform: translateY(-3px);
