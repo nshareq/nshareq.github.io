@@ -271,6 +271,18 @@ body {
         padding: 0px;
         width: 100%;
         height: 100%;
+        z-index: -11;
+    }
+    .ok {
+        position: relative;
+    }
+    .ghuraghuri {
+        position: absolute;
+        top: -230px;
+        z-index: 2000;
+    }
+    .downleft {
+        z-index: -100;
     }
     .fixedjinish p {
         padding: 0px;
@@ -278,6 +290,12 @@ body {
     }
     .lastbox1 {
         height: 300px;
+    }
+    .firstcol {
+        padding: 0;
+    }
+    .wow {
+        display: none;
     }
 }
 
