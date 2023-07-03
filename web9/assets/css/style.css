@@ -1,0 +1,782 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Fredoka+One&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.f-right {
+    float: right;
+}
+
+.f-left {
+    float: left;
+}
+
+.main-color1 {
+    color: #423F8D;
+}
+
+.main-color2 {
+    color: #ED078B;
+}
+
+
+/* Preloader */
+
+.loader {
+    margin: auto;
+    background-color: rgb(255, 250, 250);
+    height: 100vh;
+    width: 100%;
+    z-index: 10000;
+    position: fixed;
+}
+
+.loader-img {
+    width: 40px;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    z-index: 5;
+}
+
+.loader-img img {
+    width: 60px;
+}
+
+.loader-img::after {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    border-top: 2px solid #ED078B;
+    top: -27px;
+    left: -13px;
+    animation: spin;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-color: #fff;
+    z-index: -1;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loaded #preloader {
+    display: none;
+}
+
+
+/*   Header   Start       */
+
+.header-top {
+    padding: 10px 50px;
+}
+
+.header-top ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.header-top ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.header-top {
+    background-color: #ED078B;
+    color: #fff;
+}
+
+.header-icon {
+    height: 1.1rem;
+    fill: #fff;
+    transition: .4s;
+    transform: rotateY(0deg);
+}
+
+.header-icon:hover {
+    transform: rotateY(180deg);
+}
+
+.pr-20 {
+    padding-right: 20px;
+}
+
+.header-social .header-icon {
+    margin-right: 20px;
+}
+
+.header-top ul li:last-of-type {
+    margin-right: 0px;
+}
+
+.header-bottom {
+    background-color: white;
+    padding: 20px 50px;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.sandwitch-nav {
+    position: relative;
+}
+
+.nav-bar {
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    margin-top: -1%;
+    right: 0;
+}
+
+nav a {
+    color: #423F8D;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+nav ul li>a {
+    padding: 20px 0;
+    position: relative;
+    transition: .4s;
+}
+
+nav ul li:hover>a {
+    color: #ED078B;
+}
+
+nav ul li>a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #ED078B;
+    top: 100%;
+    left: 0;
+    transition: .5s;
+}
+
+nav ul li:hover>a::after {
+    width: 100%;
+}
+
+nav ul li ul li:hover>a::after {
+    width: 0%;
+}
+
+nav ul li ul {
+    padding: 0;
+    position: absolute;
+    left: 0;
+    width: 130px;
+    top: 120%;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
+    transition: .3s;
+    background-color: white;
+}
+
+nav ul li:hover ul {
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+nav ul li ul li {
+    margin: 7px 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+}
+
+.header-btn {
+    padding: 15px 40px;
+    background-color: #12D9DF;
+    border-radius: 60px;
+    color: white;
+}
+
+.header-btn:hover {
+    color: rgb(240, 240, 240);
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 5000;
+    box-shadow: 0 0 15px 0 rgba(128, 128, 128, 0.671);
+}
+
+
+/* Main  */
+
+.main {
+    background-image: url(../img/main.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.main-text {
+    background-color: white;
+    padding: 100px;
+    padding-bottom: 60px;
+    padding-top: 80px;
+    border-radius: 80px;
+}
+
+.main-text h1 {
+    font-size: 80px;
+    color: #423F8D;
+    font-family: 'Fredoka One', cursive;
+}
+
+.main-text-sec {
+    padding: 100px;
+    padding-bottom: 60px;
+    padding-top: 80px;
+    border-radius: 80px;
+}
+
+.main-text-sec h1 {
+    font-size: 80px;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+}
+
+.main-text-about {
+    padding: 100px;
+    padding-bottom: 60px;
+    padding-top: 80px;
+    border-radius: 80px;
+}
+
+.main-text-about h1 {
+    font-size: 80px;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+}
+
+.main-text p {
+    font-size: 44px;
+    margin-bottom: 30px;
+    color: #FBCE0F;
+    font-family: 'Fredoka One', cursive;
+}
+
+.main-text a {
+    font-size: 16px;
+    padding: 15px 40px;
+    background-color: #ED078B;
+    color: white;
+    border-radius: 40px;
+    font-family: 'Concert One', cursive;
+}
+
+
+/* Section 1 */
+
+.section-1 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-1-text {
+    margin-bottom: 70px;
+}
+
+.section-1-text h2 {
+    font-size: 40px;
+    display: block;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-family: "Fredoka One", cursive;
+    color: #423F8D;
+}
+
+.section-1-text h2 span {
+    font-family: "Fredoka One", cursive;
+    color: #ED078B;
+    text-transform: capitalize;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.section-1-text p {
+    color: #423F8D;
+    font-size: 18px;
+}
+
+.section-12-card-text h3 {
+    font-family: "Concert One", cursive;
+}
+
+.section-12-card-text p {
+    color: #4255A4;
+}
+
+.color1 {
+    color: #1F97D4;
+}
+
+.color2 {
+    color: #FBCE0F;
+}
+
+.color3 {
+    color: #12D9DF;
+}
+
+.section-12-card {
+    margin-bottom: 30px;
+}
+
+.section-12-card-text {
+    margin-left: 20px;
+}
+
+
+/* Offers  */
+
+.offers {
+    background-image: url(../img/offers_bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    padding-top: 180px;
+    padding-bottom: 40px;
+}
+
+.offers-sec {
+    height: 100%;
+    width: 100%;
+    padding-top: 180px;
+    padding-bottom: 40px;
+}
+
+.offers-title h2 {
+    font-family: "Fredoka One", cursive;
+    color: #423F8D;
+    margin-top: 0px;
+    font-style: normal;
+    font-size: 40px;
+    display: block;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.offers-title p {
+    color: #423F8D;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.slider {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.slides {
+    margin: 40px 20px;
+}
+
+.slides div img {
+    width: 100%;
+}
+
+.closed-main {
+    position: relative;
+}
+
+.closed {
+    position: absolute;
+    z-index: 100;
+    top: 25px;
+    left: 20px;
+    background: #ED078B;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.slide-text {
+    padding: 20px 20px;
+    padding-bottom: 40px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: white;
+    box-shadow: 0 5px 10px 0 rgba(128, 128, 128, 0.397);
+}
+
+.slide-text h2 {
+    font-size: 20px;
+    font-family: "Fredoka One", cursive;
+}
+
+.custom-btn {
+    border: 1px solid #ED078B;
+    font-family: "Fredoka One", cursive;
+    text-transform: capitalize;
+    /*! padding: 17px 42px; */
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    position: relative;
+    margin: 0;
+    z-index: 1;
+    width: 150px;
+    height: 50px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    overflow: hidden;
+}
+
+.custom-btn:hover {
+    border: none;
+}
+
+.custom-btn a {
+    color: #ED078B;
+}
+
+.custom-btn:hover a {
+    color: #fff;
+}
+
+.custom-btn:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #ED078B;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover:after {
+    top: 0;
+    bottom: auto;
+    height: 100%;
+}
+
+.custom-btn:active {
+    top: 2px;
+}
+
+.event {
+    padding: 90px 0;
+    background-image: url(../img/event_bg2.png);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.event-div {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 60px;
+}
+
+.event-text span {
+    font-family: "Fredoka One", cursive;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.event-text h2 {
+    font-family: "Fredoka One", cursive;
+    font-size: 40px;
+    display: block;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.event-text p {
+    color: #423F8D;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+#countdown li {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    text-transform: uppercase;
+    background-color: rgba(255, 253, 136, 0.418);
+    border-radius: 20px;
+    margin: 0 10px;
+}
+
+#countdown li span {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+
+/* teachers  */
+
+.teachers {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.teachers-slider {
+    margin-top: 30px;
+}
+
+.teachers h2 {
+    font-size: 20px;
+    display: block;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0px;
+    font-family: "Fredoka One", cursive;
+    color: #262550;
+}
+
+.teachers p {
+    color: #222144;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.teacher-name {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.teacher-card {
+    text-align: center;
+    margin: 0 10px;
+}
+
+.teacher-img img {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+
+/* Testimonial  */
+
+.testimonial {
+    background-image: url(../img/section_bg3.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 180px 0 100px 0;
+}
+
+.tes-text div {
+    margin: auto;
+    margin-top: 20px;
+    text-align: left;
+    width: 150px;
+}
+
+.tes-text div h3 {
+    color: #ED078B;
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+}
+
+.gal-slider div img {
+    width: 100%;
+}
+
+
+/* footer  */
+
+footer {
+    padding: 100px 0;
+    background-color: #4255A4;
+}
+
+footer h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer li {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+footer p {
+    padding-top: 20px;
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.social-div {
+    margin-right: 10px;
+    display: inline-block;
+    padding: .5rem;
+    background-color: rgba(128, 136, 255, 0.1);
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.social-div:hover {
+    background-color: #ED078B;
+}
+
+.footer-icon {
+    margin: 7px;
+    height: 16px;
+    fill: white;
+}
+
+footer ul li a {
+    line-height: 1.3;
+    transition: .5s;
+    color: white;
+    text-decoration: underline transparent;
+}
+
+footer ul li:hover a {
+    color: white;
+    text-decoration: underline;
+}
+
+.contact-main {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/contact-bg.png);
+}
+
+.contact-main .main-text {
+    background-color: transparent;
+    padding: 0;
+    padding-bottom: 100px;
+}
+
+.contact-main h1 {
+    color: #fff;
+}
+
+.map {
+    margin: 100px 0;
+    padding: 0 50px;
+}
+
+
+/* additional  */
+
+.slicknav_menu {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .slicknav_menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+    }
+    .header-btn {
+        width: max-content;
+    }
+}
+
+
+/* Query  */
+
+@media screen and (max-width: 576px) {
+    .main-text {
+        padding: 50px;
+        padding-bottom: 60px;
+        padding-top: 80px;
+        border-radius: 80px;
+    }
+    .main-text h1 {
+        font-size: 2.5rem;
+    }
+    .main-text p {
+        font-size: 2rem;
+    }
+    .main-text a {
+        font-size: 14px;
+        padding: 15px 30px;
+    }
+}
