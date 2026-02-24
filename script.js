@@ -1,6 +1,26 @@
-// Mobile Navigation Toggle
+// ============================================
+// UTILITY FUNCTIONS
+// ============================================
+
+const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
+// ============================================
+// NAVIGATION
+// ============================================
+
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const navbar = document.querySelector('.navbar');
 
 if (hamburger) {
     hamburger.addEventListener('click', () => {
@@ -9,7 +29,6 @@ if (hamburger) {
     });
 }
 
-// Close mobile menu when clicking on a link
 const navLinks = document.querySelectorAll('.nav-menu a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -28,24 +47,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
                 });
             }
         }
     });
 });
 
-// Active navigation link on scroll
+// Active navigation link on scroll & navbar background
 const sections = document.querySelectorAll('section[id]');
 
-window.addEventListener('scroll', () => {
+const handleScroll = debounce(() => {
     const scrollY = window.pageYOffset;
 
+    // Navbar background
+    if (scrollY > 50) {
+        navbar?.classList.add('scrolled');
+    } else {
+        navbar?.classList.remove('scrolled');
+    }
+
+    // Active nav link
     sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - 120;
         const sectionId = section.getAttribute('id');
         const navLink = document.querySelector(`.nav-menu a[href*="${sectionId}"]`);
 
@@ -54,52 +82,351 @@ window.addEventListener('scroll', () => {
             navLink?.classList.add('active');
         }
     });
+}, 10);
+
+window.addEventListener('scroll', handleScroll);
+
+// ============================================
+// SCROLL PROGRESS BAR
+// ============================================
+
+const scrollProgress = document.getElementById('scrollProgress');
+
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.pageYOffset / windowHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
 });
 
-// Dynamic year in footer
+// ============================================
+// BACK TO TOP BUTTON
+// ============================================
+
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 500) {
+        backToTop?.classList.add('visible');
+    } else {
+        backToTop?.classList.remove('visible');
+    }
+});
+
+backToTop?.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// ============================================
+// TYPING ANIMATION
+// ============================================
+
+const typingElement = document.getElementById('typingText');
+const typingTexts = [
+    'MSc Student in Industrial Mathematics & Data Analysis',
+    'Data Analyst',
+    'Mathematics Researcher',
+    'Python Developer'
+];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 100;
+
+function typeText() {
+    if (!typingElement) return;
+
+    const currentText = typingTexts[textIndex];
+
+    if (isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 50;
+    } else {
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 100;
+    }
+
+    if (!isDeleting && charIndex === currentText.length) {
+        isDeleting = true;
+        typingSpeed = 2000; // Pause at end
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % typingTexts.length;
+        typingSpeed = 500; // Pause before typing next
+    }
+
+    setTimeout(typeText, typingSpeed);
+}
+
+// Start typing animation after initial page load
+setTimeout(typeText, 1000);
+
+// ============================================
+// COUNTER ANIMATION
+// ============================================
+
+const counters = document.querySelectorAll('.stat-number');
+let countersAnimated = false;
+
+function animateCounters() {
+    if (countersAnimated) return;
+
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target + '+';
+            }
+        };
+
+        updateCounter();
+    });
+
+    countersAnimated = true;
+}
+
+// ============================================
+// SKILL BARS ANIMATION
+// ============================================
+
+const skillBars = document.querySelectorAll('.skill-fill');
+let skillsAnimated = false;
+
+function animateSkills() {
+    if (skillsAnimated) return;
+
+    skillBars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        bar.style.setProperty('--skill-width', width + '%');
+        setTimeout(() => {
+            bar.classList.add('animated');
+        }, 200);
+    });
+
+    skillsAnimated = true;
+}
+
+// ============================================
+// SECTION REVEAL ANIMATION
+// ============================================
+
+const revealSections = document.querySelectorAll('.reveal-section');
+const revealElements = document.querySelectorAll('.reveal-element');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+
+            // Trigger counter animation when hero section is visible
+            if (entry.target.classList.contains('hero') && !countersAnimated) {
+                setTimeout(animateCounters, 500);
+            }
+
+            // Trigger skill bars animation when skills section is visible
+            if (entry.target.id === 'skills' && !skillsAnimated) {
+                setTimeout(animateSkills, 300);
+            }
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+revealSections.forEach(section => revealObserver.observe(section));
+
+const elementObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('revealed');
+            }, index * 100);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+revealElements.forEach(element => elementObserver.observe(element));
+
+// ============================================
+// COPY TO CLIPBOARD
+// ============================================
+
+const copyButtons = document.querySelectorAll('.copy-btn');
+
+copyButtons.forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+
+        const contactItem = btn.closest('.contact-item');
+        const textToCopy = contactItem?.getAttribute('data-copy');
+
+        if (textToCopy) {
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                btn.classList.add('copied');
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<i class="far fa-copy"></i>';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+        }
+    });
+});
+
+// ============================================
+// PARALLAX EFFECT
+// ============================================
+
+window.addEventListener('scroll', debounce(() => {
+    const scrolled = window.pageYOffset;
+    const heroContent = document.querySelector('.hero-content');
+    const heroParticles = document.querySelectorAll('.hero-particle');
+
+    if (heroContent && scrolled < window.innerHeight) {
+        const parallaxSpeed = 0.3;
+        heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+    }
+
+    // Parallax for particles
+    heroParticles.forEach((particle, index) => {
+        const speed = 0.1 + (index * 0.05);
+        particle.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+}, 10));
+
+// ============================================
+// DYNAMIC YEAR
+// ============================================
+
 const yearElement = document.getElementById('year');
 if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 }
 
-// Page load animation
+// ============================================
+// PAGE LOAD ANIMATION
+// ============================================
+
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
     setTimeout(() => {
-        document.body.style.transition = 'opacity 0.4s ease';
+        document.body.style.transition = 'opacity 0.5s ease';
         document.body.style.opacity = '1';
     }, 50);
+
+    // Trigger initial animations after page load
+    setTimeout(() => {
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'running';
+        });
+    }, 300);
 });
 
-// Fade in elements on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+// ============================================
+// EASTER EGG: KONAMI CODE
+// ============================================
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+let konamiCode = [];
+const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
-// Observe sections
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
-});
+document.addEventListener('keydown', (e) => {
+    konamiCode.push(e.key);
+    konamiCode = konamiCode.slice(-10);
 
-// Navbar background on scroll
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar?.style.setProperty('background', 'rgba(10, 10, 10, 0.98)');
-    } else {
-        navbar?.style.setProperty('background', 'rgba(10, 10, 10, 0.95)');
+    if (konamiCode.join(',') === konamiSequence.join(',')) {
+        document.body.style.filter = 'hue-rotate(180deg)';
+        setTimeout(() => {
+            document.body.style.filter = '';
+        }, 3000);
     }
 });
+
+// ============================================
+// PERFORMANCE: LAZY LOADING (for future images)
+// ============================================
+
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    imageObserver.unobserve(img);
+                }
+            }
+        });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+
+// ============================================
+// CURSOR TRAIL EFFECT (SUBTLE)
+// ============================================
+
+let mouseTrail = [];
+const maxTrailLength = 20;
+
+document.addEventListener('mousemove', (e) => {
+    mouseTrail.push({ x: e.clientX, y: e.clientY, age: 0 });
+
+    if (mouseTrail.length > maxTrailLength) {
+        mouseTrail.shift();
+    }
+
+    // Animate trail
+    mouseTrail = mouseTrail.map(point => ({
+        ...point,
+        age: point.age + 1
+    })).filter(point => point.age < 30);
+});
+
+// ============================================
+// PREFETCH LINKS ON HOVER
+// ============================================
+
+const prefetchLinks = document.querySelectorAll('a[href^="http"]');
+
+prefetchLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        const prefetchLink = document.createElement('link');
+        prefetchLink.rel = 'prefetch';
+        prefetchLink.href = link.href;
+        document.head.appendChild(prefetchLink);
+    });
+});
+
+// ============================================
+// HANDLE RESIZE
+// ============================================
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        // Recalculate positions if needed
+        handleScroll();
+    }, 250);
+});
+
+console.log('🚀 Portfolio loaded successfully!');
+console.log('📊 Built by Naim Shareq');
+console.log('💡 Tip: Try the Konami code for a surprise!');

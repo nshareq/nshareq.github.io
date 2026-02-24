@@ -11,16 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="#" class="nav-brand">Naim Shareq</a>
             <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" data-section="about">About</a></li>
+                <li><a href="#research" data-section="research">Research</a></li>
+                <li><a href="#education" data-section="education">Education</a></li>
+                <li><a href="#skills" data-section="skills">Skills</a></li>
+                <li><a href="#contact" data-section="contact">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -32,24 +40,56 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-particle particle-1"></div>
+            <div class="hero-particle particle-2"></div>
+            <div class="hero-particle particle-3"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="hero-label">Bremen, Germany</p>
-                    <h1 class="hero-title">Naim Shareq</h1>
-                    <p class="hero-subtitle">MSc Student in Industrial Mathematics & Data Analysis</p>
-                    <p class="hero-role">Student Research Assistant – Data Analytics & Mathematical Modeling</p>
-                    <p class="hero-description">
+                    <p class="hero-label fade-in">
+                        <i class="fas fa-map-marker-alt"></i> Bremen, Germany
+                    </p>
+                    <h1 class="hero-title fade-in">
+                        <span>Naim Shareq</span>
+                    </h1>
+                    <p class="hero-subtitle fade-in">
+                        <span id="typingText"></span>
+                        <span class="typing-cursor"></span>
+                    </p>
+                    <p class="hero-role fade-in">Student Research Assistant – Data Analytics & Mathematical Modeling</p>
+                    <p class="hero-description fade-in">
                         Mathematics-driven data analyst focused on applied modeling, numerical simulation,
                         and AI-supported decision systems at the University of Bremen & German Aerospace Center (DLR).
+                        Passionate about transforming complex data into actionable insights through rigorous analysis.
                     </p>
-                    <div class="hero-buttons">
-                        <a href="#research" class="btn btn-primary">View Research</a>
-                        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                    <div class="hero-stats fade-in">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="1">0</span>
+                            <span class="stat-label">Research Position</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="2">0</span>
+                            <span class="stat-label">Degrees</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-label">Core Skills</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons fade-in">
+                        <a href="#research" class="btn btn-primary">
+                            <i class="fas fa-flask"></i> View Research
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-paper-plane"></i> Get in Touch
+                        </a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image fade-in">
                     <div class="profile-container">
+                        <div class="profile-ring"></div>
                         <img src="img/profile.webp" alt="Naim Shareq" class="profile-photo">
                     </div>
                 </div>
@@ -58,12 +98,13 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about reveal-section">
         <div class="container">
-            <h2 class="section-title">About</h2>
+            <h2 class="section-title reveal-element">About Me</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>
+                <div class="about-text reveal-element">
+                    <p class="about-intro">
+                        <i class="fas fa-quote-left"></i>
                         I am a Master's student in <strong>Industrial Mathematics and Data Analysis</strong> at the University of Bremen
                         with a strong interest in Artificial Intelligence and data-driven business processes.
                     </p>
@@ -77,188 +118,426 @@
                         and clear reporting. I enjoy translating research and system-level questions into measurable metrics,
                         exploratory analyses, and testable hypotheses.
                     </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Problem Solver</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Data Driven</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <span>Team Collaborator</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Research Experience Section -->
-    <section id="research" class="research">
+    <section id="research" class="research reveal-section">
         <div class="container">
-            <h2 class="section-title">Research Experience</h2>
-            <div class="research-card">
+            <h2 class="section-title reveal-element">Research Experience</h2>
+            <div class="research-card reveal-element">
                 <div class="research-header">
-                    <div>
-                        <h3>Student Research Assistant – Data Analytics & Mathematical Modeling</h3>
-                        <p class="research-org">University of Bremen & German Aerospace Center (DLR)</p>
+                    <div class="research-title-group">
+                        <div class="research-logo">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div>
+                            <h3>Student Research Assistant – Data Analytics & Mathematical Modeling</h3>
+                            <p class="research-org">University of Bremen & German Aerospace Center (DLR)</p>
+                        </div>
                     </div>
-                    <span class="research-date">04/2025 – Present</span>
+                    <span class="research-date">
+                        <i class="far fa-calendar-alt"></i> 04/2025 – Present
+                    </span>
+                </div>
+                <div class="research-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">FEniCSx</span>
+                    <span class="tag">Matplotlib</span>
+                    <span class="tag">Data Analysis</span>
                 </div>
                 <ul class="research-list">
-                    <li>Analyzed experimental sensor data (flow rates, pressure measurements)</li>
-                    <li>Performed data collection, cleaning, and validation using Python (Pandas, NumPy)</li>
-                    <li>Translated research questions into structured metrics and exploratory analyses</li>
-                    <li>Supported numerical simulations using Python (FEniCSx)</li>
-                    <li>Compared model outputs with observed experimental data</li>
-                    <li>Created visualizations using Matplotlib to communicate findings</li>
-                    <li>Contributed to structured reporting in an interdisciplinary research environment</li>
+                    <li class="research-item">
+                        <span class="bullet"><i class="fas fa-chevron-right"></i></span>
+                        <span>Analyzed experimental sensor data (flow rates, pressure measurements)</span>
+                    </li>
+                    <li class="research-item">
+                        <span class="bullet"><i class="fas fa-chevron-right"></i></span>
+                        <span>Performed data collection, cleaning, and validation using Python (Pandas, NumPy)</span>
+                    </li>
+                    <li class="research-item">
+                        <span class="bullet"><i class="fas fa-chevron-right"></i></span>
+                        <span>Translated research questions into structured metrics and exploratory analyses</span>
+                    </li>
+                    <li class="research-item">
+                        <span class="bullet"><i class="fas fa-chevron-right"></i></span>
+                        <span>Supported numerical simulations using Python (FEniCSx)</span>
+                    </li>
+                    <li class="research-item">
+                        <span class="bullet"><i class="fas fa-chevron-right"></i></span>
+                        <span>Compared model outputs with observed experimental data</span>
+                    </li>
+                    <li class="research-item">
+                        <span class="bullet"><i class="fas fa-chevron-right"></i></span>
+                        <span>Created visualizations using Matplotlib to communicate findings</span>
+                    </li>
+                    <li class="research-item">
+                        <span class="bullet"><i class="fas fa-chevron-right"></i></span>
+                        <span>Contributed to structured reporting in an interdisciplinary research environment</span>
+                    </li>
                 </ul>
-                <p class="research-note"><em>Project currently in development phase.</em></p>
+                <div class="research-footer">
+                    <p class="research-note">
+                        <i class="fas fa-info-circle"></i>
+                        <em>Project currently in development phase.</em>
+                    </p>
+                    <div class="research-impact">
+                        <span class="impact-item">
+                            <i class="fas fa-database"></i> Sensor Data Analysis
+                        </span>
+                        <span class="impact-item">
+                            <i class="fas fa-chart-bar"></i> Visualization
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="education">
+    <section id="education" class="education reveal-section">
         <div class="container">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title reveal-element">Education</h2>
             <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-header">
-                        <div>
-                            <h3>MSc Industrial Mathematics and Data Analysis</h3>
-                            <p class="education-school">University of Bremen</p>
-                        </div>
-                        <span class="education-date">04/2024 – Present</span>
+                <div class="education-card reveal-element">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <p class="education-location">Bremen, Germany</p>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <div>
+                                <h3>MSc Industrial Mathematics and Data Analysis</h3>
+                                <p class="education-school">University of Bremen</p>
+                            </div>
+                            <span class="education-date">04/2024 – Present</span>
+                        </div>
+                        <p class="education-location">
+                            <i class="fas fa-map-marker-alt"></i> Bremen, Germany
+                        </p>
+                        <div class="education-tags">
+                            <span class="edu-tag">Data Analysis</span>
+                            <span class="edu-tag">Mathematical Modeling</span>
+                            <span class="edu-tag">Numerical Methods</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="education-card">
-                    <div class="education-header">
-                        <div>
-                            <h3>BSc Applied Mathematics</h3>
-                            <p class="education-school">Noakhali Science and Technology University</p>
-                        </div>
-                        <span class="education-date">02/2017 – 04/2022</span>
+                <div class="education-card reveal-element">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <p class="education-location">Noakhali, Bangladesh</p>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <div>
+                                <h3>BSc Applied Mathematics</h3>
+                                <p class="education-school">Noakhali Science and Technology University</p>
+                            </div>
+                            <span class="education-date">02/2017 – 04/2022</span>
+                        </div>
+                        <p class="education-location">
+                            <i class="fas fa-map-marker-alt"></i> Noakhali, Bangladesh
+                        </p>
+                        <div class="education-tags">
+                            <span class="edu-tag">Calculus</span>
+                            <span class="edu-tag">Statistics</span>
+                            <span class="edu-tag">Linear Algebra</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills reveal-section">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title reveal-element">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming & AI</h3>
-                    <ul class="skill-list">
-                        <li>Python (NumPy, Pandas, scikit-learn, PyTorch)</li>
-                        <li>R (Statistical Modeling, Data Preprocessing)</li>
-                        <li>SQL</li>
-                    </ul>
+                <div class="skill-category reveal-element">
+                    <div class="skill-header">
+                        <h3><i class="fas fa-code"></i> Programming & AI</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar" data-skill="Python">
+                            <div class="skill-info">
+                                <span>Python (NumPy, Pandas, scikit-learn, PyTorch)</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="R">
+                            <div class="skill-info">
+                                <span>R (Statistical Modeling, Data Preprocessing)</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="SQL">
+                            <div class="skill-info">
+                                <span>SQL</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Data & Visualization</h3>
-                    <ul class="skill-list">
-                        <li>PowerBI</li>
-                        <li>Matplotlib</li>
-                        <li>Exploratory Data Analysis</li>
-                        <li>Metric Development</li>
-                    </ul>
+                <div class="skill-category reveal-element">
+                    <div class="skill-header">
+                        <h3><i class="fas fa-chart-pie"></i> Data & Visualization</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar" data-skill="PowerBI">
+                            <div class="skill-info">
+                                <span>PowerBI</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="Matplotlib">
+                            <div class="skill-info">
+                                <span>Matplotlib</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="EDA">
+                            <div class="skill-info">
+                                <span>Exploratory Data Analysis</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="88"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Numerical & Analytical</h3>
-                    <ul class="skill-list">
-                        <li>Data Validation</li>
-                        <li>Hypothesis-driven Analysis</li>
-                        <li>Numerical Simulation (FEniCSx)</li>
-                        <li>Mathematical Modeling</li>
-                    </ul>
+                <div class="skill-category reveal-element">
+                    <div class="skill-header">
+                        <h3><i class="fas fa-calculator"></i> Numerical & Analytical</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar" data-skill="FEniCSx">
+                            <div class="skill-info">
+                                <span>Numerical Simulation (FEniCSx)</span>
+                                <span class="skill-percent">72%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="72"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="Modeling">
+                            <div class="skill-info">
+                                <span>Mathematical Modeling</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="Validation">
+                            <div class="skill-info">
+                                <span>Data Validation & Analysis</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Tools & Languages</h3>
-                    <ul class="skill-list">
-                        <li>Git</li>
-                        <li>MS Office (Excel, PowerPoint)</li>
-                        <li>HTML & CSS</li>
-                        <li>English — C1</li>
-                        <li>German — A2</li>
-                    </ul>
+                <div class="skill-category reveal-element">
+                    <div class="skill-header">
+                        <h3><i class="fas fa-tools"></i> Tools & Languages</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar" data-skill="Git">
+                            <div class="skill-info">
+                                <span>Git</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="Office">
+                            <div class="skill-info">
+                                <span>MS Office (Excel, PowerPoint)</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar" data-skill="Web">
+                            <div class="skill-info">
+                                <span>HTML & CSS</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Career Interests Section -->
-    <section class="interests">
+    <section class="interests reveal-section">
         <div class="container">
-            <h2 class="section-title">Career Interests</h2>
-            <p class="interests-intro">
+            <h2 class="section-title reveal-element">Career Interests</h2>
+            <p class="interests-intro reveal-element">
+                <i class="fas fa-compass"></i>
                 I am interested in working student or internship positions in:
             </p>
             <div class="interests-grid">
-                <div class="interest-item">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Data Science</span>
+                <div class="interest-item reveal-element">
+                    <div class="interest-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="interest-content">
+                        <h3>Data Science</h3>
+                        <p class="interest-description">Extracting insights from complex datasets</p>
+                    </div>
                 </div>
-                <div class="interest-item">
-                    <i class="fas fa-brain"></i>
-                    <span>AI & Machine Learning</span>
+                <div class="interest-item reveal-element">
+                    <div class="interest-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="interest-content">
+                        <h3>AI & Machine Learning</h3>
+                        <p class="interest-description">Building intelligent systems</p>
+                    </div>
                 </div>
-                <div class="interest-item">
-                    <i class="fas fa-chart-pie"></i>
-                    <span>Business Intelligence</span>
+                <div class="interest-item reveal-element">
+                    <div class="interest-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="interest-content">
+                        <h3>Business Intelligence</h3>
+                        <p class="interest-description">Data-driven decision making</p>
+                    </div>
                 </div>
-                <div class="interest-item">
-                    <i class="fas fa-square-root-alt"></i>
-                    <span>Applied Mathematical Modeling</span>
+                <div class="interest-item reveal-element">
+                    <div class="interest-icon">
+                        <i class="fas fa-square-root-alt"></i>
+                    </div>
+                    <div class="interest-content">
+                        <h3>Mathematical Modeling</h3>
+                        <p class="interest-description">Applied mathematical solutions</p>
+                    </div>
                 </div>
-                <div class="interest-item">
-                    <i class="fas fa-cogs"></i>
-                    <span>Data-driven Process Optimization</span>
+                <div class="interest-item reveal-element">
+                    <div class="interest-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="interest-content">
+                        <h3>Process Optimization</h3>
+                        <p class="interest-description">Data-driven process improvement</p>
+                    </div>
                 </div>
             </div>
-            <p class="interests-outro">
+            <p class="interests-outro reveal-element">
+                <i class="fas fa-target"></i>
                 I aim to work at the intersection of mathematics, data analysis, and real-world system modeling.
             </p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact reveal-section">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
+            <h2 class="section-title reveal-element">Get In Touch</h2>
+            <p class="contact-intro reveal-element">
+                <i class="fas fa-envelope-open-text"></i>
+                I'm currently pursuing my Master's degree and working as a Research Assistant at DLR.
+                I'm always open to discussing research collaborations, data analytics opportunities, and AI-related projects.
+            </p>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
+                    <div class="contact-item reveal-element" data-copy="naimshareq@gmail.com">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
                             <span class="contact-label">Email</span>
-                            <a href="mailto:naimshareq@gmail.com">naimshareq@gmail.com</a>
+                            <a href="mailto:naimshareq@gmail.com" class="contact-value">naimshareq@gmail.com</a>
+                            <button class="copy-btn" aria-label="Copy email">
+                                <i class="far fa-copy"></i>
+                            </button>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
+                    <div class="contact-item reveal-element">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
                             <span class="contact-label">Phone</span>
-                            <a href="tel:+4915736774463">+49 157 36774463</a>
+                            <a href="tel:+4915736774463" class="contact-value">+49 157 36774463</a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
+                    <div class="contact-item reveal-element">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
                             <span class="contact-label">LinkedIn</span>
-                            <a href="https://linkedin.com/in/nshareq" target="_blank">linkedin.com/in/nshareq</a>
+                            <a href="https://linkedin.com/in/nshareq" target="_blank" class="contact-value">linkedin.com/in/nshareq</a>
+                            <i class="fas fa-external-link-alt link-icon"></i>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <div>
+                    <div class="contact-item reveal-element">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
                             <span class="contact-label">GitHub</span>
-                            <a href="https://github.com/nshareq" target="_blank">github.com/nshareq</a>
+                            <a href="https://github.com/nshareq" target="_blank" class="contact-value">github.com/nshareq</a>
+                            <i class="fas fa-external-link-alt link-icon"></i>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
+                    <div class="contact-item reveal-element">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
                             <span class="contact-label">Location</span>
-                            <span>Bremen, Germany</span>
+                            <span class="contact-value">Bremen, Germany</span>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="availability-badge reveal-element">
+                <span class="status-dot"></span>
+                <span class="status-text">Open to Opportunities</span>
             </div>
         </div>
     </section>
@@ -266,7 +545,26 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; <span id="year"></span> Naim Shareq. Mathematics & Data Analysis.</p>
+            <div class="footer-content">
+                <p class="footer-text">
+                    <i class="fas fa-code"></i>
+                    Designed & Built by <strong>Naim Shareq</strong>
+                </p>
+                <p class="footer-copyright">
+                    &copy; <span id="year"></span> Mathematics & Data Analysis. All rights reserved.
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/nshareq" target="_blank" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/nshareq" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:naimshareq@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
