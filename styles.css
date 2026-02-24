@@ -477,6 +477,53 @@ section {
     font-size: 1.5rem;
 }
 
+/* Personal Projects Section */
+.personal-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.personal-project-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.personal-project-card {
+    background: var(--card-bg);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.personal-project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+}
+
+.personal-project-card i {
+    font-size: 4rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+}
+
+.personal-project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.personal-project-card p {
+    color: var(--text-secondary);
+}
+
 /* Footer */
 .footer {
     background-color: var(--darker-bg);
