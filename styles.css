@@ -296,10 +296,11 @@ body {
 .typing-cursor {
     display: inline-block;
     width: 2px;
-    height: 1em;
+    height: 1.2em;
     background: var(--accent);
     margin-left: 4px;
     animation: blink 1s infinite;
+    flex-shrink: 0;
 }
 
 @keyframes blink {
@@ -1019,7 +1020,7 @@ section {
 .contact-intro {
     color: var(--text-secondary);
     margin-bottom: 48px;
-    max-width: 700px;
+    max-width: 100%;
     font-size: 17px;
     line-height: 1.8;
     text-align: center;
