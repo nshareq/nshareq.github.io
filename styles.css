@@ -105,7 +105,10 @@ body {
 }
 
 .hero-content {
-    max-width: 720px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 56px;
+    align-items: center;
     padding: 60px 0;
 }
 
@@ -149,6 +152,26 @@ body {
 .hero-buttons {
     display: flex;
     gap: 16px;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-container {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .btn {
@@ -467,6 +490,26 @@ section {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 32px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .profile-container {
+        width: 260px;
+        height: 260px;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -539,5 +582,10 @@ section {
     .btn {
         width: 100%;
         text-align: center;
+    }
+
+    .profile-container {
+        width: 220px;
+        height: 220px;
     }
 }
