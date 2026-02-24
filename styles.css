@@ -290,7 +290,7 @@ body {
     display: flex;
     align-items: center;
     gap: 4px;
-    min-height: 32px;
+    min-height: 60px;
 }
 
 .typing-cursor {
@@ -634,6 +634,12 @@ section {
     display: flex;
     align-items: center;
     gap: 6px;
+}
+
+.research-summary {
+    color: var(--text-secondary);
+    margin: 14px 0 18px;
+    line-height: 1.7;
 }
 
 .research-tags {

@@ -127,8 +127,7 @@ const typingElement = document.getElementById('typingText');
 const typingTexts = [
     'MSc Student in Industrial Mathematics & Data Analysis',
     'Data Analyst',
-    'Mathematics Researcher',
-    'Python Developer'
+    'Mathematics Researcher'
 ];
 let textIndex = 0;
 let charIndex = 0;
