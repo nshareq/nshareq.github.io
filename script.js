@@ -418,6 +418,78 @@ prefetchLinks.forEach(link => {
 // HANDLE RESIZE
 // ============================================
 
+// ============================================
+// CONTACT FORM SUBMISSION
+// ============================================
+
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const submitBtn = this.querySelector('.btn-submit');
+        const originalContent = submitBtn.innerHTML;
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+
+        // Submit to Formspree
+        fetch('https://formspree.io/f/mojnydrg', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Form submission failed');
+        })
+        .then(data => {
+            // Success
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> <span>Message Sent!</span>';
+            submitBtn.style.background = '#10b981';
+
+            // Reset form
+            setTimeout(() => {
+                this.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalContent;
+                submitBtn.style.background = '';
+            }, 3000);
+
+            // Show success message
+            alert('Thank you for your message! I\'ll get back to you within 24-48 hours.');
+        })
+        .catch(error => {
+            // Error
+            console.error('Error:', error);
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> <span>Try Again</span>';
+            submitBtn.style.background = '#ef4444';
+
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalContent;
+                submitBtn.style.background = '';
+            }, 3000);
+
+            alert('Sorry, there was an error sending your message. Please try again or email me directly at naimshareq@gmail.com');
+        });
+    });
+}
+
+// ============================================
+// HANDLE RESIZE
+// ============================================
+
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);

@@ -472,24 +472,24 @@
                             <h3><i class="fas fa-paper-plane"></i> Send a Message</h3>
                             <p>Fill out the form below and I'll get back to you within 24 hours.</p>
                         </div>
-                        <div class="contact-form">
+                        <form action="https://formspree.io/f/mojnydrg" method="POST" class="contact-form" id="contactForm">
                             <div class="form-group">
-                                <input type="text" placeholder="Your Name" class="form-input">
+                                <input type="text" name="name" placeholder="Your Name" class="form-input" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" placeholder="Your Email" class="form-input">
+                                <input type="email" name="email" placeholder="Your Email" class="form-input" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Subject" class="form-input">
+                                <input type="text" name="subject" placeholder="Subject" class="form-input" required>
                             </div>
                             <div class="form-group">
-                                <textarea placeholder="Your Message" rows="5" class="form-textarea"></textarea>
+                                <textarea name="message" placeholder="Your Message" rows="5" class="form-textarea" required></textarea>
                             </div>
                             <button type="submit" class="btn-submit">
                                 <i class="fas fa-paper-plane"></i>
                                 <span>Send Message</span>
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
 
