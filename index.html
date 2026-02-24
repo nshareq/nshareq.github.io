@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naim Shareq | Portfolio</title>
+    <title>Naim Shareq | Data Analyst & Mathematics Researcher</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">NS</div>
+            <a href="#" class="nav-brand">Naim Shareq</a>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -32,19 +35,21 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Hi, I'm <span class="highlight">Naim Shareq</span></h1>
-                    <p class="hero-subtitle">Data Analyst | Mathematics Master's Student | AI Enthusiast</p>
+                    <p class="hero-label">Bremen, Germany</p>
+                    <h1 class="hero-title">Naim Shareq</h1>
+                    <p class="hero-subtitle">MSc Student in Industrial Mathematics & Data Analysis</p>
+                    <p class="hero-role">Student Research Assistant – Data Analytics & Mathematical Modeling</p>
                     <p class="hero-description">
-                        Master's student in Industrial Mathematics and Data Analysis with a strong interest in Artificial Intelligence
-                        and data-driven business processes. Experienced in Python, R, and numerical simulation for real-world analytics projects.
+                        Mathematics-driven data analyst focused on applied modeling, numerical simulation,
+                        and AI-supported decision systems at the University of Bremen & German Aerospace Center (DLR).
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="#research" class="btn btn-primary">View Research</a>
+                        <a href="#contact" class="btn btn-outline">Get in Touch</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="profile-placeholder">
+                    <div class="profile-container">
                         <img src="img/profile.jpg" alt="Naim Shareq" class="profile-photo">
                     </div>
                 </div>
@@ -55,37 +60,78 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">About</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a Master's student in Industrial Mathematics and Data Analysis at the University of Bremen, currently working
-                        as a Student Research Assistant at the German Aerospace Center (DLR). My research focuses on data analytics,
-                        numerical simulation, and mathematical modeling using Python.
+                        I am a Master's student in <strong>Industrial Mathematics and Data Analysis</strong> at the University of Bremen
+                        with a strong interest in Artificial Intelligence and data-driven business processes.
                     </p>
                     <p>
-                        I have experience analyzing experimental sensor data, building data pipelines, creating visualizations,
-                        and applying machine learning techniques. I'm passionate about turning complex data into actionable insights
-                        and exploring the intersection of mathematics, AI, and real-world applications.
+                        Currently, I work as a Student Research Assistant in collaboration with the University of Bremen and the
+                        <strong>German Aerospace Center (DLR)</strong>, where I support an applied modeling project involving
+                        data preparation, numerical simulation, and visualization in Python.
                     </p>
                     <p>
-                        <strong>Current Focus:</strong> Applied modeling project involving data preparation, numerical simulation (FEniCSx),
-                        and visualization in Python for aerospace research applications.
+                        My work combines experimental sensor data analysis, mathematical modeling, numerical simulation,
+                        and clear reporting. I enjoy translating research and system-level questions into measurable metrics,
+                        exploratory analyses, and testable hypotheses.
                     </p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3 class="stat-number">MSc</h3>
-                            <p class="stat-label">Industrial Mathematics</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number">BSc</h3>
-                            <p class="stat-label">Applied Mathematics</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number">DLR</h3>
-                            <p class="stat-label">Research Assistant</p>
-                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Experience Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research Experience</h2>
+            <div class="research-card">
+                <div class="research-header">
+                    <div>
+                        <h3>Student Research Assistant – Data Analytics & Mathematical Modeling</h3>
+                        <p class="research-org">University of Bremen & German Aerospace Center (DLR)</p>
                     </div>
+                    <span class="research-date">04/2025 – Present</span>
+                </div>
+                <ul class="research-list">
+                    <li>Analyzed experimental sensor data (flow rates, pressure measurements)</li>
+                    <li>Performed data collection, cleaning, and validation using Python (Pandas, NumPy)</li>
+                    <li>Translated research questions into structured metrics and exploratory analyses</li>
+                    <li>Supported numerical simulations using Python (FEniCSx)</li>
+                    <li>Compared model outputs with observed experimental data</li>
+                    <li>Created visualizations using Matplotlib to communicate findings</li>
+                    <li>Contributed to structured reporting in an interdisciplinary research environment</li>
+                </ul>
+                <p class="research-note"><em>Project currently in development phase.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-header">
+                        <div>
+                            <h3>MSc Industrial Mathematics and Data Analysis</h3>
+                            <p class="education-school">University of Bremen</p>
+                        </div>
+                        <span class="education-date">04/2024 – Present</span>
+                    </div>
+                    <p class="education-location">Bremen, Germany</p>
+                </div>
+                <div class="education-card">
+                    <div class="education-header">
+                        <div>
+                            <h3>BSc Applied Mathematics</h3>
+                            <p class="education-school">Noakhali Science and Technology University</p>
+                        </div>
+                        <span class="education-date">02/2017 – 04/2022</span>
+                    </div>
+                    <p class="education-location">Noakhali, Bangladesh</p>
                 </div>
             </div>
         </div>
@@ -94,203 +140,121 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> Programming & AI</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">scikit-learn</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">SQL</span>
-                    </div>
+                    <h3>Programming & AI</h3>
+                    <ul class="skill-list">
+                        <li>Python (NumPy, Pandas, scikit-learn, PyTorch)</li>
+                        <li>R (Statistical Modeling, Data Preprocessing)</li>
+                        <li>SQL</li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-chart-bar"></i> Visualization & Reporting</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">PowerBI</span>
-                        <span class="skill-tag">Data Visualization</span>
-                        <span class="skill-tag">Statistical Modeling</span>
-                        <span class="skill-tag">Data Preprocessing</span>
-                    </div>
+                    <h3>Data & Visualization</h3>
+                    <ul class="skill-list">
+                        <li>PowerBI</li>
+                        <li>Matplotlib</li>
+                        <li>Exploratory Data Analysis</li>
+                        <li>Metric Development</li>
+                    </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Software</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">FEniCSx</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">PowerPoint</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                    </div>
+                    <h3>Numerical & Analytical</h3>
+                    <ul class="skill-list">
+                        <li>Data Validation</li>
+                        <li>Hypothesis-driven Analysis</li>
+                        <li>Numerical Simulation (FEniCSx)</li>
+                        <li>Mathematical Modeling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Languages</h3>
+                    <ul class="skill-list">
+                        <li>Git</li>
+                        <li>MS Office (Excel, PowerPoint)</li>
+                        <li>HTML & CSS</li>
+                        <li>English — C1</li>
+                        <li>German — A2</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- Career Interests Section -->
+    <section class="interests">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">DLR Data Analytics Project</h3>
-                        <p class="project-description">
-                            Analyzing experimental sensor data (flow rates, pressure measurements) through data collection, cleaning, and validation.
-                            Supporting numerical simulations in Python (FEniCSx) and creating visualizations to communicate research insights.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>NumPy</span>
-                            <span>FEniCSx</span>
-                            <span>Matplotlib</span>
-                        </div>
-                        <div class="project-links">
-                            <span class="project-link" style="color: var(--text-secondary);"><i class="fas fa-building"></i> University of Bremen & DLR</span>
-                        </div>
-                    </div>
+            <h2 class="section-title">Career Interests</h2>
+            <p class="interests-intro">
+                I am interested in working student or internship positions in:
+            </p>
+            <div class="interests-grid">
+                <div class="interest-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Data Science</span>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Master's Thesis Research</h3>
-                        <p class="project-description">
-                            Applied modeling project involving data preparation, numerical simulation, and visualization in Python.
-                            Focus on mathematical modeling and data analysis for industrial applications.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Mathematical Modeling</span>
-                            <span>Numerical Simulation</span>
-                            <span>Data Analysis</span>
-                        </div>
-                        <div class="project-links">
-                            <span class="project-link" style="color: var(--text-secondary);"><i class="fas fa-university"></i> University of Bremen</span>
-                        </div>
-                    </div>
+                <div class="interest-item">
+                    <i class="fas fa-brain"></i>
+                    <span>AI & Machine Learning</span>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Statistical Modeling & Analysis</h3>
-                        <p class="project-description">
-                            Data analysis projects using R for statistical modeling and preprocessing. Applied machine learning algorithms
-                            for pattern recognition and predictive analytics on real-world datasets.
-                        </p>
-                        <div class="project-tech">
-                            <span>R</span>
-                            <span>Statistical Modeling</span>
-                            <span>Data Preprocessing</span>
-                            <span>scikit-learn</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/nshareq" class="project-link"><i class="fab fa-github"></i> View Projects</a>
-                        </div>
-                    </div>
+                <div class="interest-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Business Intelligence</span>
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-square-root-alt"></i>
+                    <span>Applied Mathematical Modeling</span>
+                </div>
+                <div class="interest-item">
+                    <i class="fas fa-cogs"></i>
+                    <span>Data-driven Process Optimization</span>
                 </div>
             </div>
+            <p class="interests-outro">
+                I aim to work at the intersection of mathematics, data analysis, and real-world system modeling.
+            </p>
         </div>
     </section>
 
     <!-- Personal Projects Section -->
-    <section class="projects" style="background-color: var(--dark-bg);">
+    <section class="personal-projects">
         <div class="container">
-            <h2 class="section-title">Personal Web Projects</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
-                Explore my collection of web development projects and experiments
-            </p>
-            <div class="personal-projects-grid">
-                <a href="web/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-code"></i>
-                        <h3>Web Project 1</h3>
-                        <p>Interactive web application</p>
-                    </div>
+            <h2 class="section-title">Web Projects</h2>
+            <p class="personal-intro">A collection of web development projects and experiments</p>
+            <div class="web-projects-grid">
+                <a href="web/index.html" class="web-project-card">
+                    <span>Project 1</span>
                 </a>
-                <a href="web1/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-laptop"></i>
-                        <h3>Web Project 2</h3>
-                        <p>Responsive website design</p>
-                    </div>
+                <a href="web1/index.html" class="web-project-card">
+                    <span>Project 2</span>
                 </a>
-                <a href="web2/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-desktop"></i>
-                        <h3>Web Project 3</h3>
-                        <p>Modern web interface</p>
-                    </div>
+                <a href="web2/index.html" class="web-project-card">
+                    <span>Project 3</span>
                 </a>
-                <a href="web3/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Web Project 4</h3>
-                        <p>Mobile-friendly design</p>
-                    </div>
+                <a href="web3/index.html" class="web-project-card">
+                    <span>Project 4</span>
                 </a>
-                <a href="web4/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-paint-brush"></i>
-                        <h3>Web Project 5</h3>
-                        <p>Creative web project</p>
-                    </div>
+                <a href="web4/index.html" class="web-project-card">
+                    <span>Project 5</span>
                 </a>
-                <a href="web5/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Web Project 6</h3>
-                        <p>Functional web app</p>
-                    </div>
+                <a href="web5/index.html" class="web-project-card">
+                    <span>Project 6</span>
                 </a>
-                <a href="web6/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-chart-bar"></i>
-                        <h3>Web Project 7</h3>
-                        <p>Data visualization project</p>
-                    </div>
+                <a href="web6/index.html" class="web-project-card">
+                    <span>Project 7</span>
                 </a>
-                <a href="web7/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-gamepad"></i>
-                        <h3>Web Project 8</h3>
-                        <p>Interactive experience</p>
-                    </div>
+                <a href="web7/index.html" class="web-project-card">
+                    <span>Project 8</span>
                 </a>
-                <a href="web8/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-database"></i>
-                        <h3>Web Project 9</h3>
-                        <p>Database-driven app</p>
-                    </div>
+                <a href="web8/index.html" class="web-project-card">
+                    <span>Project 9</span>
                 </a>
-                <a href="web9/index.html" class="personal-project-link">
-                    <div class="personal-project-card">
-                        <i class="fas fa-rocket"></i>
-                        <h3>Web Project 10</h3>
-                        <p>Advanced web solution</p>
-                    </div>
+                <a href="web9/index.html" class="web-project-card">
+                    <span>Project 10</span>
                 </a>
-                <a href="https://github.com/nshareq?tab=repositories" class="personal-project-link" target="_blank">
-                    <div class="personal-project-card">
-                        <i class="fab fa-github"></i>
-                        <h3>More on GitHub</h3>
-                        <p>View all my repositories</p>
-                    </div>
+                <a href="https://github.com/nshareq?tab=repositories" class="web-project-card" target="_blank">
+                    <span><i class="fab fa-github"></i> More on GitHub</span>
                 </a>
             </div>
         </div>
@@ -299,30 +263,44 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">Contact</h2>
             <div class="contact-content">
-                <p class="contact-text">
-                    I'm currently pursuing my Master's degree and working as a Research Assistant at DLR.
-                    I'm always open to discussing research collaborations, data analytics opportunities,
-                    and AI-related projects. Feel free to reach out!
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:naimshareq@gmail.com" class="contact-link">
+                <div class="contact-info">
+                    <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>naimshareq@gmail.com</span>
-                    </a>
-                    <a href="https://github.com/nshareq" class="contact-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>github.com/nshareq</span>
-                    </a>
-                    <a href="https://linkedin.com/in/nshareq" class="contact-link" target="_blank">
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:naimshareq@gmail.com">naimshareq@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <span class="contact-label">Phone</span>
+                            <a href="tel:+4915736774463">+49 157 36774463</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
-                        <span>linkedin.com/in/nshareq</span>
-                    </a>
-                    <a href="https://twitter.com/nshareq" class="contact-link" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                        <span>@nshareq</span>
-                    </a>
+                        <div>
+                            <span class="contact-label">LinkedIn</span>
+                            <a href="https://linkedin.com/in/nshareq" target="_blank">linkedin.com/in/nshareq</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <span class="contact-label">GitHub</span>
+                            <a href="https://github.com/nshareq" target="_blank">github.com/nshareq</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span class="contact-label">Location</span>
+                            <span>Bremen, Germany</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -331,16 +309,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer-text">
-                Designed & Built by <span class="highlight">Naim Shareq</span> |
-                &copy; <span id="year"></span> All rights reserved
-            </p>
-            <div class="social-links">
-                <a href="https://github.com/nshareq" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/nshareq" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/nshareq" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="mailto:naimshareq@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
+            <p>&copy; <span id="year"></span> Naim Shareq. Mathematics & Data Analysis.</p>
         </div>
     </footer>
 
